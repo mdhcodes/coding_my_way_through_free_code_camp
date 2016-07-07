@@ -80,7 +80,7 @@ h3 {
 
 #new-quote,
 #tweet-quote {
-    margin: 5em 3em 1em;
+    margin: 5em 1em 1em;
     padding: 0.5em;
     background: #f1d2bd;
     border: 1px solid rgba(0, 0, 0, 0.50);
@@ -104,7 +104,6 @@ footer {
     font-size: 0.625em;
     text-align: center;
     padding: 4em 0 0 0;
-    clear: both;
 }
 
 footer a:hover {
