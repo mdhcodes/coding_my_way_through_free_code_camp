@@ -6,11 +6,6 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-    color: #cbd9e8;
-}
-
 html,
 body {
     font-family: "Open Sans", sans-serif;
@@ -21,12 +16,21 @@ body {
     color: #fafafa;
 }
 
+a {
+    text-decoration: none;
+    color: #415f7e;
+}
+
+a:hover {
+    border-bottom: 1px dotted;
+}
+
 
 /*===== MAIN =====*/
 
 .main {
     margin: 5em auto 0;
-    width: 24em;
+    max-width: 24em;
     height: 32em;
     text-align: center;
     line-height: 2.5;
@@ -37,7 +41,7 @@ body {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
 }
 
-h1 {
+.main h1 {
     font-family: "Raleway", sans-serif;
     font-size: 2em;
     margin: 0;
@@ -62,10 +66,6 @@ h1 {
     display: inline-block;
 }
 
-#sunrise {
-    margin: -0.5em 0 0 0;
-}
-
 #convert-temp {
     border: 1px solid;
     margin: 0 0 0 0.5em;
@@ -76,17 +76,40 @@ h1 {
     color: #fafafa;
 }
 
+
+/*===== FOOTER =====*/
+
 footer {
-    padding: 1em;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    font-size: 0.625em;
+    max-width: 50em;
+    margin: 22em auto;
     text-align: center;
+    padding: 1em 0 0 0;
+    font-size: 12px;
 }
 
 footer a {
+    color: #cbd9e8;
+}
+
+footer a:hover {
     border-bottom: 1px dotted;
+}
+
+
+/*===== MEDIA QUERIES =====*/
+
+@media screen and (min-width: 56.25em) {
+    footer p:first-child {
+        float: left;
+    }
+
+    footer p:nth-child(2) {
+        float: right;
+    }
+}
+
+@media screen and (min-width: 112.5em) {
+    footer {
+        margin-top: 26em;
+    }
 }
