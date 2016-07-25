@@ -1,6 +1,6 @@
 /* Get a random quote from Andrux API */
 
-var getQuote = function () {
+var getQuote = function() {
     var quote = document.getElementById("quote");
     var author = document.getElementById("author");
     var newQuote = document.getElementById("new-quote");
@@ -12,18 +12,18 @@ var getQuote = function () {
     req.setRequestHeader("X-Mashape-Key", "I3Ab8tTM1gmshcj2qLrIwhoP996dp1Xub4hjsnJ5SFNZJ94FOK");
     req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     req.setRequestHeader("Accept", "application/json");
-    req.addEventListener("load", function () {
-        if (req.status === 200 && req.statusText === "OK") {
+    req.addEventListener("load", function() {
+        if(req.status === 200 && req.statusText === "OK") {
             var response = JSON.parse(req.responseText);
             quote.innerHTML = "&ldquo;" + response.quote + "&rdquo;";
             author.innerHTML = "&mdash; " + response.author;
             // Get a new random quote
-            newQuote.onclick = function () {
+            newQuote.onclick = function() {
                 getQuote();
             };
             // Open a tweet web intent window populated with the current quote and author
             // Encode response.quote and response.author in case they contain JavaScript special characters
-            tweetQuote.onclick = function () {
+            tweetQuote.onclick = function() {
                 tweetQuote.setAttribute("href", "https://twitter.com/intent/tweet?text=" + "\"" + encodeURIComponent(response.quote) + "\" - " + encodeURIComponent(response.author) + "");
             };
         } else {
@@ -36,6 +36,6 @@ var getQuote = function () {
 }; // end getQuote
 
 
-window.onload = function () {
+window.onload = function() {
     getQuote();
 };
