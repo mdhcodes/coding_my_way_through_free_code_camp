@@ -10,18 +10,20 @@ We'll pass you an array of two numbers. Return the sum of those two numbers and 
 The lowest number will not always come first.
 */
 
-var sumAll(arr) = function() {
-  
-  var min = Math.min(arr[0],arr[1]);
-	var max = Math.max(arr[0],arr[1]);
-	var newArray = [];
+var sumAll = function(arr) {
+
+  //var min = Math.min(arr[0],arr[1]);
+	//var max = Math.max(arr[0],arr[1]);
+  var min = Math.min(...arr);
+  var max = Math.max(...arr);
+  var newArray = [];
 	var count = min;
-	
+
 	while(count <= max) {
 		newArray.push(count);
 		count++;
 	}
-	
+
 	return newArray.reduce(function(prev, curr) {
   		return prev + curr;
   	});
